@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Wise Australia</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav id="top-nav">
+            <div class="logo-container">
+                <img src="images/PowerIcon.png" alt="Power Logo" id="home-logo" onclick="showPage('home')">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" id="link-home" class="active" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" id="link-televisions" onclick="showPage('televisions')">Televisions</a></li>
+                <li><a href="#" id="link-about" onclick="showPage('about')">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <section id="home" class="page">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Powering a Smarter Australia</h1>
+                    <p>Lower your bills and reduce your carbon footprint by choosing high-efficiency appliances tailored for the Australian climate.</p>
+                    <button class="cta-button" onclick="showPage('televisions')">Compare TV Energy ➔</button>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="card-icon">📉</div>
+                    <h3>Reduce Costs</h3>
+                    <p>A 6-star appliance uses roughly <strong>25% less energy</strong> than a 4-star model, saving you hundreds over the product's life.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">🇦🇺</div>
+                    <h3>AU Standards</h3>
+                    <p>Our data is aligned with the <strong>GEMS Act</strong>, ensuring you see the most accurate kWh/year ratings available.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">💡</div>
+                    <h3>Smart Choice</h3>
+                    <p>Understand the "Total Cost of Ownership" before you buy, not after the first electricity bill arrives.</p>
+                </div>
+            </div>
+
+            <div class="label-explainer">
+                <h2>How to Read the Energy Rating Label</h2>
+                <p>The Australian Energy Rating Label is a mandatory guide found on all new televisions and whitegoods.</p>
+                
+                <div class="guide-flex">
+                    <div class="guide-box">
+                        <span class="number">1</span>
+                        <h4>The Stars</h4>
+                        <p>More stars = More efficient. Gold stars indicate "Super Efficient" models (5-6 stars).</p>
+                    </div>
+                    <div class="guide-box">
+                        <span class="number">2</span>
+                        <h4>Energy Consumption</h4>
+                        <p>The number in the box shows <strong>kWh per year</strong>. This is what you actually pay for.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="televisions" class="page" style="display:none;">
+            <h1>Television Energy Ratings</h1>
+            <p>Compare the energy consumption of popular television models currently in the Australian market.</p>
+            
+            <div class="search-container">
+                <input type="text" id="tvSearch" onkeyup="filterTable()" placeholder="Search by Brand or Model...">
+            </div>
+
+            <div id="csv-table-container">
+                <p>Loading energy data...</p>
+            </div>
+        </section>
+
+        <section id="about" class="page" style="display:none;">
+            <div class="about-hero">
+                <h1>Our Commitment to Australia</h1>
+                <p class="lead-text">Empowering households with transparency, data, and sustainable choices since 2026.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🎯</div>
+                    <h4>Accuracy</h4>
+                    <p>We source data directly from national energy archives to ensure every kWh is accounted for.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌿</div>
+                    <h4>Sustainability</h4>
+                    <p>Our mission is to reduce the national carbon footprint, one appliance at a time.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤝</div>
+                    <h4>Independence</h4>
+                    <p>Energy Wise Australia is a neutral platform. Our star ratings are based on physics, not ads.</p>
+                </div>
+            </div>
+
+            <div class="about-content-split">
+                <div class="text-content">
+                    <h3>Why We Do It</h3>
+                    <p>The Australian energy market is one of the most complex in the world. With rising costs and a shift toward renewable energy, understanding how much power your TV or fridge pulls from the grid is no longer a luxury—it's a necessity.</p>
+                    
+                    <div class="mini-stat">
+                        <span class="stat-number">10+ Stars</span>
+                        <p>We track the latest "Super Efficient" appliances that go beyond the standard 6-star rating.</p>
+                    </div>
+                </div>
+                
+                <div class="visual-content">
+                    <div class="star-rating-preview">
+                        <div class="star-row">★★★★★</div>
+                        <p>The standard of excellence in the Australian market.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 [POH WEI LE] | INTI INTERNATIONAL COLLEGE SUBANG</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
