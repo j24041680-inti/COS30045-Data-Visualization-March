@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Wise Australia</title>
-    <link rel="stylesheet" href="./css/styles.css?v=1.2">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
@@ -23,41 +23,46 @@
 
     <main id="content">
         <section id="home" class="page">
-            <div class="hero-banner">
-                <h1>Smart Energy for Australian Homes</h1>
-                <p class="subtitle">Your guide to reducing costs and choosing high-efficiency appliances.</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-icon">⚡</span>
-                    <h3>Average Usage</h3>
-                    <p>The typical AU household uses <strong>18kWh</strong> per day.</p>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">💰</span>
-                    <h3>Potential Savings</h3>
-                    <p>Switching to 5-star appliances can save up to <strong>$400/year</strong>.</p>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">🌱</span>
-                    <h3>Carbon Impact</h3>
-                    <p>High-efficiency tech reduces household emissions by <strong>15%</strong>.</p>
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Powering a Smarter Australia</h1>
+                    <p>Lower your bills and reduce your carbon footprint by choosing high-efficiency appliances tailored for the Australian climate.</p>
+                    <button class="cta-button" onclick="showPage('televisions')">Compare TV Energy ➔</button>
                 </div>
             </div>
 
-            <div class="info-section">
-                <h2>Understanding the Star Rating</h2>
-                <p>In Australia, the <strong>Energy Rating Label</strong> helps you compare the energy efficiency and running costs of appliances before you buy. The more stars, the more efficient the product is.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="card-icon">📉</div>
+                    <h3>Reduce Costs</h3>
+                    <p>A 6-star appliance uses roughly <strong>25% less energy</strong> than a 4-star model, saving you hundreds over the product's life.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">🇦🇺</div>
+                    <h3>AU Standards</h3>
+                    <p>Our data is aligned with the <strong>GEMS Act</strong>, ensuring you see the most accurate kWh/year ratings available.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">💡</div>
+                    <h3>Smart Choice</h3>
+                    <p>Understand the "Total Cost of Ownership" before you buy, not after the first electricity bill arrives.</p>
+                </div>
+            </div>
+
+            <div class="label-explainer">
+                <h2>How to Read the Energy Rating Label</h2>
+                <p>The Australian Energy Rating Label is a mandatory guide found on all new televisions and whitegoods.</p>
                 
-                <div class="label-guide">
-                    <div class="guide-text">
-                        <h4>What to look for:</h4>
-                        <ul>
-                            <li><strong>The Stars:</strong> More stars = Lower running costs.</li>
-                            <li><strong>Energy Consumption:</strong> This number (kWh per year) tells you how much electricity it uses.</li>
-                            <li><strong>Comparison:</strong> Only compare models of a similar size or capacity.</li>
-                        </ul>
+                <div class="guide-flex">
+                    <div class="guide-box">
+                        <span class="number">1</span>
+                        <h4>The Stars</h4>
+                        <p>More stars = More efficient. Gold stars indicate "Super Efficient" models (5-6 stars).</p>
+                    </div>
+                    <div class="guide-box">
+                        <span class="number">2</span>
+                        <h4>Energy Consumption</h4>
+                        <p>The number in the box shows <strong>kWh per year</strong>. This is what you actually pay for.</p>
                     </div>
                 </div>
             </div>
@@ -66,37 +71,59 @@
         <section id="televisions" class="page" style="display:none;">
             <h1>Television Energy Ratings</h1>
             <p>Compare the energy consumption of popular television models currently in the Australian market.</p>
+            
+            <div class="search-container">
+                <input type="text" id="tvSearch" onkeyup="filterTable()" placeholder="Search by Brand or Model...">
+            </div>
+
             <div id="csv-table-container">
                 <p>Loading energy data...</p>
             </div>
         </section>
 
         <section id="about" class="page" style="display:none;">
-            <h1>About Energy Wise Australia</h1>
-            <div class="about-container">
-                <p class="lead-text">
-                    Welcome to <strong>Energy Wise Australia</strong>, your independent resource for navigating the landscape of home appliance efficiency. 
-                </p>
-
-                <h3>Our Mission</h3>
-                <p>
-                    Our goal is simple: to empower Australian households with the data they need to reduce their carbon footprint and lower utility bills. Choosing the right appliance is about the long-term "total cost of ownership."
-                </p>
-
-                <div class="highlight-box">
-                    <h4>Why Energy Ratings Matter:</h4>
-                    <ul>
-                        <li><strong>Financial Savings:</strong> High-efficiency appliances save hundreds annually.</li>
-                        <li><strong>Environmental Impact:</strong> Lower demand reduces grid-wide emissions.</li>
-                        <li><strong>Market Transparency:</strong> We provide accurate consumption figures (kWh/year).</li>
-                    </ul>
-                </div>
-
-                <h3>The Australian Context</h3>
-                <p>
-                    Australia has some of the most rigorous energy rating standards in the world. The <strong>Star Rating</strong> system helps consumers compare products like televisions and refrigerators across different climate zones.
-                </p>
+            <div class="about-hero">
+                <h1>Our Commitment to Australia</h1>
+                <p class="lead-text">Empowering households with transparency, data, and sustainable choices since 2026.</p>
             </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🎯</div>
+                    <h4>Accuracy</h4>
+                    <p>We source data directly from national energy archives to ensure every kWh is accounted for.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌿</div>
+                    <h4>Sustainability</h4>
+                    <p>Our mission is to reduce the national carbon footprint, one appliance at a time.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤝</div>
+                    <h4>Independence</h4>
+                    <p>Energy Wise Australia is a neutral platform. Our star ratings are based on physics, not ads.</p>
+                </div>
+            </div>
+
+            <div class="about-content-split">
+                <div class="text-content">
+                    <h3>Why We Do It</h3>
+                    <p>The Australian energy market is one of the most complex in the world. With rising costs and a shift toward renewable energy, understanding how much power your TV or fridge pulls from the grid is no longer a luxury—it's a necessity.</p>
+                    
+                    <div class="mini-stat">
+                        <span class="stat-number">10+ Stars</span>
+                        <p>We track the latest "Super Efficient" appliances that go beyond the standard 6-star rating.</p>
+                    </div>
+                </div>
+                
+                <div class="visual-content">
+                    <div class="star-rating-preview">
+                        <div class="star-row">★★★★★</div>
+                        <p>The standard of excellence in the Australian market.</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
@@ -104,6 +131,6 @@
         <p>&copy; 2026 [POH WEI LE] | INTI INTERNATIONAL COLLEGE SUBANG</p>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
