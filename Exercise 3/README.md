@@ -2,103 +2,90 @@
 
 ## Overview
 
-In this exercise, you will develop a **data story** based on the **TV Energy Consumption dataset**. Using the website created in **Exercise 0.2**, you will extend your work to present a meaningful narrative supported by data visualisations.
-
-Your goal is to communicate insights from the dataset in a clear and engaging way through your **website and written explanation**.
-
-You must use the **Exercise 3 folder in your existing forked repository** and reuse the files created in **Exercise 0.2**.
-
----
+By using the TV Energy Consumption dataset, I had created an interactive data story using a grid-based web interface (extending what was built in the Exercise 0.2 website). This new design will help guide users through an interactive storytelling example related to energy efficiency in Australia.
 
 ## Data Story
 
 ### Audience
 
-The target audience for this visualisation includes:
+The target audiences for the visualisation created are to be:
 
-- Consumers interested in **energy-efficient televisions**
-- Policy makers and regulators interested in **energy consumption trends**
-- Researchers studying **energy efficiency in consumer electronics**
+- Household Owners in Australia who are considering how to lower their quarterly utility expenses by purchasing better quality household appliances.
 
-These audiences are interested in understanding how **television energy consumption varies across models, sizes, and technologies**, and how these factors influence overall energy usage.
+- Creators of Policies: They are interested in how effective GEMS Act labels are and what trends are occurring among consumers.
+
+- Researchers of Electronics: They are researching the efficiency differences in display technologies, including LCD vs. LED vs. OLED.
 
 ### Story Overview
 
-This visualisation explores patterns in **TV energy consumption** across different television models and specifications.
+The goal of this interactive experience is to turn technical energy data into usable insights for the consumer. The story is broken down into 5 primary research questions and each presented as a separate "Data Card".
 
-The goal is to help viewers understand:
+When the user selects a card, the site will zoom into a 6-frame storyboard using modal animation, allowing the user to focus on the stages of the narrative, which will follow a consistent architectural flow.
 
-- How energy consumption varies between television models
-- The relationship between **screen size and power consumption**
-- How **energy efficiency ratings** impact energy usage
-- Trends that may help consumers choose more **energy-efficient televisions**
+Frame 1 & 2 (Problem/Demonstration): Trying to identify a common consumer problem (e.g. Confusing technology labels).
 
-The website presents these insights through visualisations and explanatory text that guide the viewer through the data.
+Frame 3 & 4 (Ideas/Pilot): How the data was analyzed to connect the problem to the consumer's needs.
 
----
+Frame 5 & 6 (Success/Recommendation): Presenting the visual evidence along with the final tip for making a "Smart Choice".
 
 ## About the Data
 
 ### Data Source
 
-The dataset used in this project contains information about **television models and their energy consumption characteristics**, including power usage, screen size, technology type, and efficiency ratings.
-
-The dataset was provided as part of the course materials.
+The dataset was sourced from the National Energy Archives (GEMS database), containing 2026 product specifications for televisions sold in Australia.
 
 ### Data Processing
 
-Before creating visualisations, the dataset was processed to ensure it was suitable for analysis. This included:
+The data that has been processed to make compatible with the web interface is as follows:
 
-- Cleaning missing or inconsistent values
-- Selecting relevant attributes for visualisation
-- Organising the data into formats suitable for web visualisation
+Selection: Relevant attributes were selected and given priority for attributes such as Technology Type, Screen Size in inches, Annual kWh, and Star Ratings.
+
+Aggregation: Data has been aggregated to show market level trends by technology and manufacturer.
+
+Visual Generation: A number of visual representations such as Bar Charts and Scatter Plots were created for each storyboard frame to help support the visual storytelling.
 
 ### Privacy
 
-The dataset does not contain any **personal or sensitive information**. It focuses solely on product specifications and energy consumption data related to television devices.
+Personal Information: There are no personal or sensitive details found in the data. Instead, all of the information is related to the product metrics themselves, which are all publicly available.
+
+Ethics: In order to avoid causing confusion for viewers of our website showcasing Notable Energy-Related Events, the interface distinguishes between relative efficiency (stars) and actual consumption (kWh) to prevent consumer confusion by using an "energy-efficient" television to describe a television with a large screen that would ultimately use a considerable amount of energy to operate.
 
 ### Accuracy and Limitations
 
-While the dataset provides useful information about TV energy consumption, there are some limitations:
+There are limitations to this dataset and what can be learned from these insights into the Australian television sector.
 
-- The dataset may not include **all available television models**
-- Some information may be **outdated or incomplete**
-- Energy consumption may vary depending on **real-world usage conditions**
+- The dataset reflects only a representative sample of models available as of 2026 (when tests were conducted). The dataset also might not include all niche or budget brands.
 
-These factors should be considered when interpreting the visualisations.
+- The dataset considers energy consumption (annual kilowatt-hours) generated through testing under GEMS (Global Energy Management System) conditions, which are standardized for testing purposes.
+
+- User settings will also affect how much power each model actually uses (i.e., brightness (HDR), volume, and number of hours the player is in use each day).
 
 ### Ethics
 
-When presenting data visualisations, it is important to ensure that the information is represented **accurately and responsibly**.
+Ethical Data Representation is fundamental within this project, as shown by my responses to three points below:
 
-This project follows ethical data visualisation practices by:
+1. The Efficiency Paradox: Providing clear differentiation of ‘Stars’ (efficiency restraints based on physical dimensions of product) versus ‘kWh’ – (actual cost of usage from an electricity perspective) – will aid in preventing customers from being misled by receiving too many stars on screens using a large volume of energy.
 
-- Avoiding misleading visual representations
-- Clearly explaining the context of the data
-- Presenting information transparently so viewers can interpret the results correctly
+2. Transparent Sourcing: All source documentation for graphic elements used within the storyboard frames will be directly referenced to allow for 100% data transparency and integrity.
 
----
+3. Contextual Framing: Using a series (6 frames) of storyboards along with raw data will establish explanations as to why the data trends exist and will eliminate the confusion which has been created by solely providing raw numbers without context surrounding them. 
 
 ## AI Declaration
 
-Artificial Intelligence (AI) tools may have been used to assist with aspects of this assignment, such as:
+This assignment employed the collaborative use of AI tools.
 
-- Generating example code
-- Improving code structure
-- Assisting with documentation writing
+Code Implementation - AI helped with the design of the CSS Grid for the bento box layout and the development of the full-screen modal zoom and carousel transitions.
 
-All AI-generated assistance was reviewed, modified where necessary, and integrated responsibly into the project.
-
----
+Refinement - All AI-generated code and/or text were reviewed and edited after testing were conducted in the Mercury server to confirm alignment with Exercise 3 requirements.
 
 ## Website Storytelling
 
-The website has been updated to communicate a **data-driven story** based on the TV energy consumption dataset.
+The project was redesigned as an interactive data-driven experience:
 
-The website includes:
+- Interactive Grid: A 3 column "Bento Box" grid that allows the audience to explore all 5 Data Stories at their own pace by using the "tiles".
 
-- Visualisations that present key insights from the dataset
-- Text explanations that help readers understand the meaning of the visualisations
-- Context that connects the data to real-world implications
+- Zoom-In Architecture: This is initiated when a user clicks on a Data Card; this triggers a Zoom-In animation, removing background noise, allowing the user to focus on a specific storyboard modal.
 
-The aim is to guide the viewer through the data in a way that is **informative, engaging, and easy to understand**.
+- Guided Narrative: Each modal uses a carousel system to take the Viewer through a chronological series of 6 frames of evidence.
+
+- Actionable Insights: All of the 5 Data Storylines end in data-backed recommendations taking them beyond traditional visualization to practical consumer advice.

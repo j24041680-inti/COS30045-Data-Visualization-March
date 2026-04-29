@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Wise Australia</title>
+    <link rel="icon" type="image/png" href="./images/PowerIcon2.png">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav id="top-nav">
+            <div class="logo-container">
+                <img src="images/PowerIcon.png" alt="Power Logo" id="home-logo" onclick="showPage('home')">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" id="link-home" class="active" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" id="link-televisions" onclick="showPage('televisions')">Televisions</a></li>
+                <li><a href="#" id="link-about" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#" id="link-data-story" onclick="showPage('data-story')">Data Story</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <section id="home" class="page">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Powering a Smarter Australia</h1>
+                    <p>Lower your bills and reduce your carbon footprint by choosing high-efficiency appliances tailored for the Australian climate.</p>
+                    <button class="cta-button" onclick="showPage('televisions')">Compare TV Energy ➔</button>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="card-icon">📉</div>
+                    <h3>Reduce Costs</h3>
+                    <p>A 6-star appliance uses roughly <strong>25% less energy</strong> than a 4-star model, saving you hundreds over the product's life.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">🇦🇺</div>
+                    <h3>AU Standards</h3>
+                    <p>Our data is aligned with the <strong>GEMS Act</strong>, ensuring you see the most accurate kWh/year ratings available.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">💡</div>
+                    <h3>Smart Choice</h3>
+                    <p>Understand the "Total Cost of Ownership" before you buy, not after the first electricity bill arrives.</p>
+                </div>
+            </div>
+
+            <div class="label-explainer">
+                <h2>How to Read the Energy Rating Label</h2>
+                <p>The Australian Energy Rating Label is a mandatory guide found on all new televisions and whitegoods.</p>
+                
+                <div class="guide-flex">
+                    <div class="guide-box">
+                        <span class="number">1</span>
+                        <h4>The Stars</h4>
+                        <p>More stars = More efficient. Gold stars indicate "Super Efficient" models (5-6 stars).</p>
+                    </div>
+                    <div class="guide-box">
+                        <span class="number">2</span>
+                        <h4>Energy Consumption</h4>
+                        <p>The number in the box shows <strong>kWh per year</strong>. This is what you actually pay for.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="televisions" class="page" style="display:none;">
+            <h1>Television Energy Ratings</h1>
+            <p>Compare the energy consumption of popular television models currently in the Australian market.</p>
+            
+            <div class="search-container">
+                <input type="text" id="tvSearch" onkeyup="filterTable()" placeholder="Search by Brand or Model...">
+            </div>
+
+            <div id="csv-table-container">
+                <p>Loading energy data...</p>
+            </div>
+        </section>
+
+        <section id="about" class="page" style="display:none;">
+            <div class="about-hero">
+                <h1>Our Commitment to Australia</h1>
+                <p class="lead-text">Empowering households with transparency, data, and sustainable choices since 2026.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🎯</div>
+                    <h4>Accuracy</h4>
+                    <p>We source data directly from national energy archives to ensure every kWh is accounted for.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌿</div>
+                    <h4>Sustainability</h4>
+                    <p>Our mission is to reduce the national carbon footprint, one appliance at a time.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤝</div>
+                    <h4>Independence</h4>
+                    <p>Energy Wise Australia is a neutral platform. Our star ratings are based on physics, not ads.</p>
+                </div>
+            </div>
+
+            <div class="about-content-split">
+                <div class="text-content">
+                    <h3>Why We Do It</h3>
+                    <p>The Australian energy market is one of the most complex in the world. With rising costs and a shift toward renewable energy, understanding how much power your TV or fridge pulls from the grid is no longer a luxury—it's a necessity.</p>
+                    
+                    <div class="mini-stat">
+                        <span class="stat-number">10+ Stars</span>
+                        <p>We track the latest "Super Efficient" appliances that go beyond the standard 6-star rating.</p>
+                    </div>
+                </div>
+                
+                <div class="visual-content">
+                    <div class="star-rating-preview">
+                        <div class="star-row">★★★★★</div>
+                        <p>The standard of excellence in the Australian market.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="data-story" class="page" style="display:none;">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>The Australian TV Energy Storyboard</h1>
+                    <p>A visual journey exploring efficiency, size, and market trends.</p>
+                </div>
+            </div>
+
+            <div class="data-story-grid">
+                <div class="story-card" onclick="openStoryModal('q1-modal')">
+                    <span class="card-number">01</span>
+                    <h3>Market Availability</h3>
+                    <p>What TV technologies are actually on Australian shelves?</p>
+                    <span class="view-story-btn">View Storyboard ➔</span>
+                </div>
+                <div class="story-card" onclick="openStoryModal('q2-modal')">
+                    <span class="card-number">02</span>
+                    <h3>Popular Sizes</h3>
+                    <p>Which screen sizes are the most frequent in the 2026 data?</p>
+                    <span class="view-story-btn">View Storyboard ➔</span>
+                </div>
+                <div class="story-card" onclick="openStoryModal('q3-modal')">
+                    <span class="card-number">03</span>
+                    <h3>Brand Volume</h3>
+                    <p>Which manufacturers provide the largest number of models?</p>
+                    <span class="view-story-btn">View Storyboard ➔</span>
+                </div>
+
+                <div class="story-card wide-card" onclick="openStoryModal('q4-modal')">
+                    <span class="card-number">04</span>
+                    <h3>Efficiency King</h3>
+                    <p>Which specific technology consumes the least power?</p>
+                    <span class="view-story-btn">View Storyboard ➔</span>
+                </div>
+                <div class="story-card wide-card" onclick="openStoryModal('q5-modal')">
+                    <span class="card-number">05</span>
+                    <h3>Size vs. Power</h3>
+                    <p>What is the mathematical relationship between inches and kWh?</p>
+                    <span class="view-story-btn">View Storyboard ➔</span>
+                </div>
+            </div>
+
+            <div class="story-modal-overlay" id="q1-modal">
+                <div class="story-modal-content">
+                    <span class="close-modal" onclick="closeStoryModal('q1-modal')">×</span>
+                    <div class="carousel-container" id="carousel-q1">
+                        <div class="carousel-slide active">
+                            <img src="images/q1-f1.png" alt="Q1 Frame 1">
+                            <p class="frame-caption"><strong>Frame 1 (Issue):</strong> Shoppers are overwhelmed by labels like LCD, OLED, and LED.</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/q1-f2.png" alt="Q1 Frame 2">
+                            <p class="frame-caption"><strong>Frame 2 (Demo):</strong> The GEMS dataset shows over 3 different display variations currently on sale.</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/q1-f3.png" alt="Q1 Frame 3">
+                            <p class="frame-caption"><strong>Frame 3 (Ideas):</strong> We grouped these into three main categories—Standard LED, LCD, and OLED.</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/q1-f4.png" alt="Q1 Frame 4">
+                            <p class="frame-caption"><strong>Frame 4 (Pilot):</strong> Analyzing model frequency for each category across the Australian market.</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/q1-f5.png" alt="Q1 Frame 5">
+                            <p class="frame-caption"><strong>Frame 5 (Success):</strong> LED is revealed as the most frequent technology available.</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/q1-f6.png" alt="Q1 Frame 6">
+                            <p class="frame-caption"><strong>Frame 6 (Recommendation):</strong> Choose LED for value; choose OLED for premium contrast.</p>
+                        </div>
+                        <div class="carousel-controls">
+                            <button onclick="moveSlide('carousel-q1', -1)">❮ Back</button>
+                            <button onclick="moveSlide('carousel-q1', 1)">Next ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-modal-overlay" id="q2-modal">
+                <div class="story-modal-content">
+                    <span class="close-modal" onclick="closeStoryModal('q2-modal')">×</span>
+                    <div class="carousel-container" id="carousel-q2">
+                        <div class="carousel-slide active"><img src="images/q2-f1.png"><p class="frame-caption"><strong>Frame 1:</strong> Buyers struggle to pick a size that balances preference with availability.</p></div>
+                        <div class="carousel-slide"><img src="images/q2-f2.png"><p class="frame-caption"><strong>Frame 2:</strong> Data shows a massive range from 16" to 116", creating a "choice paradox".</p></div>
+                        <div class="carousel-slide"><img src="images/q2-f3.png"><p class="frame-caption"><strong>Frame 3:</strong> Identifying the "Standard" Australian sizes used by most manufacturers.</p></div>
+                        <div class="carousel-slide"><img src="images/q2-f4.png"><p class="frame-caption"><strong>Frame 4:</strong> Mapping total models against specific screen inch categories.</p></div>
+                        <div class="carousel-slide"><img src="images/q2-f5.png"><p class="frame-caption"><strong>Frame 5:</strong> Bar chart show 55" and 65" are the most frequent "sweet spot" sizes.</p></div>
+                        <div class="carousel-slide"><img src="images/q2-f6.png"><p class="frame-caption"><strong>Frame 6:</strong> Shop 55-65" for the most competitive pricing and model variety.</p></div>
+                        <div class="carousel-controls"><button onclick="moveSlide('carousel-q2', -1)">❮ Back</button><button onclick="moveSlide('carousel-q2', 1)">Next ❯</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-modal-overlay" id="q3-modal">
+                <div class="story-modal-content">
+                    <span class="close-modal" onclick="closeStoryModal('q3-modal')">×</span>
+                    <div class="carousel-container" id="carousel-q3">
+                        <div class="carousel-slide active"><img src="images/q3-f1.png"><p class="frame-caption"><strong>Frame 1:</strong> Over 100 brands exist; which ones provide actual variety?</p></div>
+                        <div class="carousel-slide"><img src="images/q3-f2.png"><p class="frame-caption"><strong>Frame 2:</strong> Many obscure brands offer few energy-efficient options compared to leaders.</p></div>
+                        <div class="carousel-slide"><img src="images/q3-f3.png"><p class="frame-caption"><strong>Frame 3:</strong> Ranking manufacturers by model count to see who provides most choice.</p></div>
+                        <div class="carousel-slide"><img src="images/q3-f4.png"><p class="frame-caption"><strong>Frame 4:</strong> Categorizing the 2026 dataset by manufacturer volume.</p></div>
+                        <div class="carousel-slide"><img src="images/q3-f5.png"><p class="frame-caption"><strong>Frame 5:</strong> Bar charts show Samsung and KOGAN lead the market in variety.</p></div>
+                        <div class="carousel-slide"><img src="images/q3-f6.png"><p class="frame-caption"><strong>Frame 6:</strong> Stick to major brands for transparency and high-efficiency choices.</p></div>
+                        <div class="carousel-controls"><button onclick="moveSlide('carousel-q3', -1)">❮ Back</button><button onclick="moveSlide('carousel-q3', 1)">Next ❯</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-modal-overlay" id="q4-modal">
+                <div class="story-modal-content">
+                    <span class="close-modal" onclick="closeStoryModal('q4-modal')">×</span>
+                    <div class="carousel-container" id="carousel-q4">
+                        <div class="carousel-slide active"><img src="images/q4-f1.png"><p class="frame-caption"><strong>Frame 1:</strong> Can choosing the right tech lower your quarterly bill?</p></div>
+                        <div class="carousel-slide"><img src="images/q4-f2.png"><p class="frame-caption"><strong>Frame 2:</strong> Standard LED backlights waste power even during dark scenes.</p></div>
+                        <div class="carousel-slide"><img src="images/q4-f3.png"><p class="frame-caption"><strong>Frame 3:</strong> Investigating OLED pixels versus traditional backlighting.</p></div>
+                        <div class="carousel-slide"><img src="images/q4-f4.png"><p class="frame-caption"><strong>Frame 4:</strong> Testing average power draw across technology types.</p></div>
+                        <div class="carousel-slide"><img src="images/q4-f5.png"><p class="frame-caption"><strong>Frame 5:</strong> LCD technology draws the least power in normal watching tests.</p></div>
+                        <div class="carousel-slide"><img src="images/q4-f6.png"><p class="frame-caption"><strong>Frame 6:</strong> Invest in LCD for long-term savings, choose OLED for cinematic viewing.</p></div>
+                        <div class="carousel-controls"><button onclick="moveSlide('carousel-q4', -1)">❮ Back</button><button onclick="moveSlide('carousel-q4', 1)">Next ❯</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-modal-overlay" id="q5-modal">
+                <div class="story-modal-content">
+                    <span class="close-modal" onclick="closeStoryModal('q5-modal')">×</span>
+                    <div class="carousel-container" id="carousel-q5">
+                        <div class="carousel-slide active"><img src="images/q5-f1.png"><p class="frame-caption"><strong>Frame 1:</strong> Does a larger screen always result in a much higher bill?</p></div>
+                        <div class="carousel-slide"><img src="images/q5-f2.png"><p class="frame-caption"><strong>Frame 2:</strong> 32" vs 75" reveals a giant gap in raw electricity demand.</p></div>
+                        <div class="carousel-slide"><img src="images/q5-f3.png"><p class="frame-caption"><strong>Frame 3:</strong> Plotting every model to find the exact mathematical trend.</p></div>
+                        <div class="carousel-slide"><img src="images/q5-f4.png"><p class="frame-caption"><strong>Frame 4:</strong> Measuring "Surface Area Effect" on annual kWh usage.</p></div>
+                        <div class="carousel-slide"><img src="images/q5-f5.png"><p class="frame-caption"><strong>Frame 5:</strong> Scatter plots confirm a direct, positive correlation: Size = Power.</p></div>
+                        <div class="carousel-slide"><img src="images/q5-f6.png"><p class="frame-caption"><strong>Frame 6:</strong> Upscaling size adds cost; always check the kWh label.</p></div>
+                        <div class="carousel-controls"><button onclick="moveSlide('carousel-q5', -1)">❮ Back</button><button onclick="moveSlide('carousel-q5', 1)">Next ❯</button></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 [POH WEI LE] | INTI INTERNATIONAL COLLEGE SUBANG</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
