@@ -1,0 +1,71 @@
+/* Exercise 6.1: Interactive components & vector visualization formatting */
+
+/* Baseline look for your interactive screen tech buttons */
+.filter-btn {
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: 2px solid #e2e8f0;
+    padding: 10px 24px;
+    margin-right: 12px;
+    border-radius: 50px; /* Changes to modern rounded pill shapes like your CTA buttons */
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--electric-blue);
+    color: var(--electric-blue);
+    background-color: #f0f7ff; /* Matches your table row hover highlights */
+}
+
+/* Fired dynamic active toggle state matching your primary navigation design signature */
+.filter-btn.active {
+    background-color: var(--electric-blue);
+    border-color: var(--electric-blue);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+}
+
+/* The box containing your D3 interactive vectors */
+.histogram-chart-wrapper {
+    background-color: var(--white);
+    border-radius: 15px; /* Matches your main page hero-sections curves */
+    padding: 35px 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* D3 structural grid axes tracking layer paths formatting */
+.histogram-axis path,
+.histogram-axis line {
+    stroke: #cbd5e1; /* Replaced with a softer, clean grey axis line divider rule */
+    stroke-width: 1px;
+}
+
+/* D3 structural graph text tick formatting rules */
+.histogram-axis text {
+    font-size: 10px;
+    fill: var(--text-muted);
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    font-weight: 500;
+}
+
+/* Exercise 6.2: Inline SVG-Native Hover Tooltip Theme Matching */
+
+/* Formats the absolute background pop-up box overlay card */
+.tooltip rect {
+    pointer-events: none;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15)); /* Applies elevation shadow mapping */
+}
+
+/* Formats the centered sizing metrics labels characters */
+.tooltip text {
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    font-size: 11px; /* Matches minor descriptions sizes */
+    fill: var(--white);
+    pointer-events: none;
+}

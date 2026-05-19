@@ -1,0 +1,29 @@
+/* Exercise 6.1: Base apparatus structure layout */
+
+/* Outer grid wrapper integrating cleanly with the system background colors */
+.histogram-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px 0; /* Matches standard side inner alignment paddings */
+    background-color: var(--white); /* Removes the raw ice-blue block to stay crisp white */
+    margin-bottom: 20px;
+}
+
+/* The card framing your interactive screen tech controls */
+.control-card {
+    background-color: #f8fafc; /* Matches your home .stat-card background */
+    padding: 25px;
+    border-radius: 10px; /* Unified with your main card borders */
+    border: 1px solid #e2e8f0;
+    border-left: 6px solid var(--electric-blue); /* Matches your main theme accents */
+}
+
+.control-card h4 {
+    margin: 0 0 12px 0;
+    color: var(--primary-blue);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
